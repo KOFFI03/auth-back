@@ -6,7 +6,7 @@ import { ValidationPipe } from '@nestjs/common';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-<<<<<<< HEAD
+
   // ✅ ACTIVER CORS
   app.enableCors({
     origin: '*', // pour le dev
@@ -14,8 +14,7 @@ async function bootstrap() {
     credentials: true,
   });
 
-=======
->>>>>>> 348563159f5d86b6c6bc04e4c1bb4a6449402a19
+
   const config = new DocumentBuilder()
     .setTitle('Auth API')
     .setDescription('Nest Auth API')
@@ -25,12 +24,7 @@ async function bootstrap() {
 
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
-
-<<<<<<< HEAD
-=======
   
-
->>>>>>> 348563159f5d86b6c6bc04e4c1bb4a6449402a19
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
@@ -38,11 +32,11 @@ async function bootstrap() {
     }),
   );
 
-<<<<<<< HEAD
+
   await app.listen(process.env.PORT ?? 3000);
-=======
- await app.listen(process.env.PORT ?? 3000);
->>>>>>> 348563159f5d86b6c6bc04e4c1bb4a6449402a19
+  
+
+
 }
 
 bootstrap();
